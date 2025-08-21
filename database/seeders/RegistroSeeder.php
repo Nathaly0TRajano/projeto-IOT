@@ -17,7 +17,7 @@ class RegistroSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create('pt_BR');
-        $sensorores = Sensor::all();
+        $sensores = Sensor::all();
 
         $unidadesPorTipo = [
             'temperatura' => 'ºC',
@@ -30,7 +30,7 @@ class RegistroSeeder extends Seeder
         $dataFinal = Carbon::now('America/Sao_Paulo');
 
         while($dataAtual->lessThanOrEqualTo($dataFinal)){ // Enquanto a data atual for igual ou menor que a atual
-            foreach($sensorores as $sensor){
+            foreach($sensores as $sensor){
                 $tipo = $sensor->tipo;
 
                 $unidade = $unidadesPorTipo[$tipo] ?? '';
@@ -42,8 +42,24 @@ class RegistroSeeder extends Seeder
                     case 'umidade':
                         $valor = $faker->randomFloat(2, 20, 90);
                         break;
+                    case 'luminosidade':
+                        $valor = $faker->numberBetween(0, 1000);
+                        break;
+                    case 'presenca':
+                        $valor = $faker->randomElement(['ON','OFF']);
+                        break;
+                    default:
+                        $valor=$faker->randomFloat(2, 0, 100);
+                        break;
                 }
+                Registro::create([
+                    'sensor_id'=> $sensor->id,
+                    'valor' => $valor,
+                    'unidade' => $unidade,
+                    'data_hora' => $dataAtual->format('Y-m-d H:i:s')
+                ]);
             }
+            $dataAtual->addMinutes(10);
         }
     }
 }
