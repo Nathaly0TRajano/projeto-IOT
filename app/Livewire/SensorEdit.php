@@ -52,8 +52,6 @@ class SensorEdit extends Component
             session()->flash('success', 'Cadastro atualizado com sucesso!');
              return redirect()->route('sensor.edit');
         }
-
-        session()->flash('notUpdate', 'Sensor não encontrado!');
     }
 }
 
