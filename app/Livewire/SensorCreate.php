@@ -16,20 +16,23 @@ class SensorCreate extends Component
 
     protected $rules = [
         'ambiente_id'=> 'required',
-        'codigo'=> 'required|integer|unique:sensors,codigo',
-        'tipo'=> 'required|max:50|min:5',
-        'descricao'=> 'required|max:255|min:5'
+        'codigo'=> 'required|unique:sensors,codigo',
+        'tipo'=> 'required|max:50|min:3',
+        'descricao'=> 'required|max:255|min:5',
+        'status'=> 'required'
     ];
 
     protected $messages = [
-        'ambiente_id.required'=> 'O campo nome é obrigatório',
+        'ambiente_id.required'=> 'O campo ambiente é obrigatório',
         'codigo.required' => 'O código é obrigatório',
         'codigo.unique' => 'Este código já está cadastrado',
         'tipo.required' => 'O campo tipo é obrigatório',
-        'tipo.min' => 'O número minímo de caracteres é de 5',
+        'tipo.min' => 'O número minímo de caracteres é de 3',
         'tipo.max' => 'O limite maxímo de caracteres é de 50',
+        'descricao.required' =>'O campo descrição é obrigatório',
         'descricao.max' => 'O máximo de caracteres é 255',
         'descricao.min' => 'O mínimo de caracteres é 5',
+        'status'=> 'Escolha como quer o status do sensor'
     ];
     
 
@@ -52,6 +55,6 @@ class SensorCreate extends Component
             'status'=> $this->status
         ]);
 
-           return redirect()->route('sensor.create');
+           return redirect()->route('sensor.index');
     }
 }

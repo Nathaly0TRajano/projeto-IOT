@@ -9,22 +9,27 @@ use Livewire\WithPagination;
 class SensorIndex extends Component
 {
 
-     public $sensor;
+    public $sensor;
     use WithPagination;
 
 
     public $search = '';
     public $perPage = 15;
 
-     protected $rules = [
-        'ambiente_id'=> 'required',
-        'codigo'=> 'required|integer|unique:sensors,codigo',
-        'tipo'=> 'required|max:50|min:5',
-        'descricao'=> 'required|max:255|min:5'
+    protected $queryString = [
+        'search' => ['except' => ''],
+        'perPage' => ['except' => 15]
+    ];
+
+    protected $rules = [
+        'ambiente_id' => 'required',
+        'codigo' => 'required|integer|unique:sensors,codigo',
+        'tipo' => 'required|max:50|min:5',
+        'descricao' => 'required|max:255|min:5'
     ];
 
     protected $messages = [
-        'ambiente_id.required'=> 'O campo nome é obrigatório',
+        'ambiente_id.required' => 'O campo nome é obrigatório',
         'codigo.required' => 'O código é obrigatório',
         'codigo.unique' => 'Este código já está cadastrado',
         'tipo.required' => 'O campo tipo é obrigatório',
@@ -40,18 +45,12 @@ class SensorIndex extends Component
         return view('livewire.sensor-index', compact('sensors'));
     }
 
-    protected $queryString = [
-        'search' => ['except' => ''],
-        'perPage' => ['except' => 15]
-    ];
-
     public function delete($id)
     {
 
-        $sensor = Sensor::find($id); 
+        $sensor = Sensor::find($id);
 
-        $sensor->delete(); 
+        $sensor->delete();
         session()->flash('message', 'Sensor deletado com sucesso!');
-        
     }
 }
