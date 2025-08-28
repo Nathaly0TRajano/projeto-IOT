@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center align-items-center mx-auto">
     <div class="card col-md-6 bg-primary text-light shadow">
-        <form wire:submit='store' class="form">
+        <form wire:submit.prevent="salvar" class="form">
             <div class="card-body">
-                 <h5 class="title mb-1">Cadastrar sensores</h5>
+                <h5 class="title mb-1">Editar sensores</h5>
                 <div class="mb-3">
                     <label for="">Ambiente:</label>
                     <select class="form-select" aria-label="Default select example" wire:model.defer="ambiente_id"
@@ -11,9 +11,6 @@
                             <option value="{{ $ambiente->id }}">{{ $ambiente->nome }}</option>
                         @endforeach
                     </select>
-                     @error('ambiente_id')
-                        <span class="text-light small">{{ $message }}</span>
-                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Descrição:</label>
@@ -47,8 +44,8 @@
                         <span class="text-light small">{{ $message }}</span>
                     @enderror
                 </div>
-                <button class="btn bg-success text-light">Cadastrar</button>
-                <a class="btn bg-danger text-light" href="{{route('sensor.index')}}">Cancelar</a>
+                <button class="btn bg-success text-light">Salvar</button>
+                <a href="{{ route('sensor.index') }}" class="btn bg-danger text-light">Fechar</a>
             </div>
         </form>
     </div>

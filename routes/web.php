@@ -1,9 +1,9 @@
 <?php
 
 use App\Livewire\Dashboard;
-use App\Livewire\SensorCreate;
-use App\Livewire\SensorEdit;
-use App\Livewire\SensorIndex;
+use App\Livewire\Sensor\SensorCreate;
+use App\Livewire\Sensor\SensorEdit;
+use App\Livewire\Sensor\SensorIndex;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', Dashboard::class);

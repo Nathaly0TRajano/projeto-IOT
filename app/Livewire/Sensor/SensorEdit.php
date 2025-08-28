@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Sensor;
 
 use App\Models\Ambiente;
 use App\Models\Sensor;
@@ -14,7 +14,7 @@ class SensorEdit extends Component
     public $status;
     public $ambiente_id;
     public $sensorId;
-
+    
     protected $rules = [
         'ambiente_id'=> 'required',
         'codigo'=> 'required|unique:sensors,codigo->ignore("$sensor->id")',
@@ -34,14 +34,14 @@ class SensorEdit extends Component
         'descricao.min' => 'O mínimo de caracteres é 5',
         'sensor.required'=> 'É necessário escolher o status do sensor'
     ];
-
+    
     public function render()
     {
-        $ambientes = Ambiente::all();
-        return view('livewire.sensor-edit', compact('ambientes'));
+         $ambientes = Ambiente::all();
+        return view('livewire.sensor.sensor-edit', compact('ambientes'));
     }
 
-      public function mount($id)
+    public function mount($id)
     {
         $sensor = Sensor::find($id);
 
@@ -58,8 +58,8 @@ class SensorEdit extends Component
             $this->status = $sensor->status;
         }
     }
-
-     public function salvar()
+    
+    public function salvar()
     {
 
         $sensor = Sensor::find($this->sensorId);
@@ -79,5 +79,5 @@ class SensorEdit extends Component
              return redirect()->route('sensor.index');
         }
     }
-}
 
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Sensor;
 
 use App\Models\Ambiente;
 use App\Models\Sensor;
@@ -14,7 +14,7 @@ class SensorCreate extends Component
     public $status;
     public $ambiente_id;
 
-    protected $rules = [
+     protected $rules = [
         'ambiente_id'=> 'required',
         'codigo'=> 'required|unique:sensors,codigo',
         'tipo'=> 'required|max:50|min:3',
@@ -34,12 +34,11 @@ class SensorCreate extends Component
         'descricao.min' => 'O mínimo de caracteres é 5',
         'status'=> 'Escolha como quer o status do sensor'
     ];
-    
 
     public function render()
     {
          $ambientes = Ambiente::all();
-        return view('livewire.sensor-create', compact('ambientes'));
+        return view('livewire.sensor.sensor-create', compact('ambientes'));
     }
 
     public function store(){
@@ -55,6 +54,7 @@ class SensorCreate extends Component
             'status'=> $this->status
         ]);
 
+         session()->flash('success', 'Sensor criado com sucesso!');
            return redirect()->route('sensor.index');
     }
 }

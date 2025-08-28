@@ -1,4 +1,12 @@
 <div class="container mt-3">
+    
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <div class="card bg-primary">
         <div class="card-body">
             <div class="d-flex row input-group">

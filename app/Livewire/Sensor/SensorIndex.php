@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Sensor;
 
 use App\Models\Sensor;
 use Livewire\Component;
@@ -8,7 +8,7 @@ use Livewire\WithPagination;
 
 class SensorIndex extends Component
 {
-
+    
     public $sensor;
     use WithPagination;
 
@@ -42,10 +42,10 @@ class SensorIndex extends Component
     public function render()
     {
         $sensors = Sensor::paginate(15);
-        return view('livewire.sensor-index', compact('sensors'));
+        return view('livewire.sensor.sensor-index', compact('sensors'));
     }
 
-    public function delete($id)
+     public function delete($id)
     {
 
         $sensor = Sensor::find($id);
