@@ -24,5 +24,8 @@
         @endforeach
     </tbody>
    </table>
+   <div class="mt-3">
+        {{ $registros->links() }}
+    </div>
 </div>
 
