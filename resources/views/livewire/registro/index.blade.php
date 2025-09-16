@@ -19,7 +19,7 @@
             <td>{{$r->valor}}</td>
             <td>{{$r->unidade}}</td>
             <td>{{$r->data_hora}}</td>
-            <td><a wire:click="delete{{$r->id}}" class="btn bg-danger">Deletar</a></td>
+            <td><a wire:click="delete({{$r->id}})" class="btn bg-danger" onclick="return confirm('Tem certeza?')">Deletar</a></td>
         </tr>
         @endforeach
     </tbody>
