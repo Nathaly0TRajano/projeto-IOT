@@ -15,3 +15,4 @@ Route::get('sensor/edit/{id}', SensorEdit::class)->name('sensor.edit');
 Route::get('sensor/', SensorIndex::class)->name('sensor.index');
 
 
+
