@@ -1055,16 +1055,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v11.46.0",
+            "version": "v11.46.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2c6d85f22d08123ad45aa3a6726b16f06e68eecd"
+                "reference": "5fd457f807570a962a53b403b1346efe4cc80bb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2c6d85f22d08123ad45aa3a6726b16f06e68eecd",
-                "reference": "2c6d85f22d08123ad45aa3a6726b16f06e68eecd",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5fd457f807570a962a53b403b1346efe4cc80bb8",
+                "reference": "5fd457f807570a962a53b403b1346efe4cc80bb8",
                 "shasum": ""
             },
             "require": {
@@ -1266,7 +1266,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-09-08T21:54:34+00:00"
+            "time": "2025-09-30T14:51:32+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -4400,9 +4400,7 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-
             "version": "v1.33.0",
-          
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
@@ -4461,8 +4459,6 @@
                 "portable"
             ],
             "support": {
-
-
                 "source": "https://github.com/symfony/polyfill-ctype/tree/v1.33.0"
             },
             "funding": [
@@ -4487,7 +4483,6 @@
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-
             "version": "v1.33.0",
             "source": {
                 "type": "git",
@@ -4566,13 +4561,11 @@
                     "type": "tidelift"
                 }
             ],
-
             "time": "2025-06-27T09:58:17+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
             "version": "v1.33.0",
-          
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-idn.git",
@@ -4635,9 +4628,7 @@
                 "shim"
             ],
             "support": {
-
                 "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.33.0"
-
             },
             "funding": [
                 {
@@ -4808,7 +4799,6 @@
             ],
             "support": {
                 "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.33.0"
-
             },
             "funding": [
                 {
@@ -4817,7 +4807,6 @@
                 },
                 {
                     "url": "https://github.com/fabpot",
-
                     "type": "github"
                 },
                 {
@@ -4974,7 +4963,6 @@
             ],
             "support": {
                 "source": "https://github.com/symfony/polyfill-php83/tree/v1.33.0"
-
             },
             "funding": [
                 {
@@ -4999,7 +4987,6 @@
         {
             "name": "symfony/polyfill-uuid",
             "version": "v1.33.0",
-
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-uuid.git",
@@ -7034,8 +7021,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3e4c6ef395f7cb61a6206c23e0e04b31724174f2",
-                "reference": "3e4c6ef395f7cb61a6206c23e0e04b31724174f2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1c6cb5dfe412af3d0dfd414cfd110e3b9cfdbc3c",
+                "reference": "1c6cb5dfe412af3d0dfd414cfd110e3b9cfdbc3c",
                 "shasum": ""
             },
             "require": {

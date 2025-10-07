@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\ValidationException;
 
 class RegistroFormRequest extends FormRequest
 {
@@ -23,17 +26,34 @@ class RegistroFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-        'sensor_id' =>'required',
-        'valor'=>'required',
+        'cod_sensor' =>'required',
+        'valor'=>'required|numeric',
         'unidade'=> 'required',
-        'data_hora'=>'required'
         ];
     }
-        protected $messages = [
-        'sensor_id.required'=>'Este campo é obrigatório',
-        'valor.required'=>'Este campo é obrigatório',
-        'data_hora.required'=>'Este campo é obrigatório'
-    ];
+
+    public function failedValition(Validator $validator)
+    {
+        if($this->expectsJson()){
+            throw new HttpResponseException(response()->json([
+                'success' =>false,
+                'message' => 'Erro de validação',
+                'errors' => $validator->errors()
+            ], 422));
+        }
+        // Se for livewire, lança uma exeção padrão do laravel
+        throw new ValidationException($validator);
+    }
+
+        public function messages(){
+        
+        return [
+        'cod_sensor.required'=>'O código do sensor é obrigatório',
+        'valor.required'=>'O valor do sensor é obrigatório',
+        'valor.numeric'=>'O valor do sensor precisa ser numérico',
+        'unidade.required'=>'O unidade de medida é obrigatória'
+        ];
+    }
 
 }
 

@@ -16,7 +16,7 @@
         <tbody>
             <tr>
                 <th>ID</th>
-                <th>Sensor</th>
+                <th>Código do Sensor</th>
                 <th>Valor</th>
                 <th>Unidade</th>
                 <th>Data e Hora</th>
