@@ -24,7 +24,9 @@
                                 <td>{{ $ambiente->id }}</td>
                                 <td>{{ $ambiente->nome }}</td>
                                 <td>{{ $ambiente->descricao }}</td>
-                                <td>{{ $ambiente->status }}</td>
+                                <td>
+                                    <a class="btn btn-primary" wire:click="statusUpdate({{$ambiente->id}})">{{$ambiente->status}} </a>
+                                </td>
                                 <td>
                                     <a class="btn btn-warning text-light"
                                         href="{{ route('ambiente.editar', $ambiente->id) }}"><strong>Editar</strong></a>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AmbienteController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\SensorController;
+use App\Livewire\Ambiente\AmbienteCreate;
 use App\Livewire\RegistroIndex;
 use App\Livewire\Sensor\SensorCreate;
 use Illuminate\Http\Request;
@@ -11,6 +12,10 @@ use Illuminate\Support\Facades\Route;
 Route::post('registro/create', [RegistroController::class,"store"]);
 
 Route::put('ambiente/edit/',[AmbienteController::class,"update"]);
+
+Route::get('ambiente/{id}/find',[AmbienteController::class,"findLED"]);
+
+Route::post('ambiente/create/', AmbienteCreate::class, 'store');
 
 Route::post('sensor/create/',[SensorController::class,"store"]);
 

@@ -13,12 +13,26 @@ class AmbienteIndex extends Component
         return view('livewire.ambiente.ambiente-index', compact('ambientes'));
     }
 
-     public function delete($id)
+    public function delete($id)
     {
 
         $ambiente = Ambiente::find($id);
 
         $ambiente->delete();
         session()->flash('sucess', 'Ambiente deletado com sucesso!');
+    }
+
+    public function statusUpdate($id)
+    {
+        $dados = Ambiente::find($id);
+
+        if ($dados->status == 1) {
+            $dados->status = 0;
+        } else {
+            $dados->status = 1;
+        }
+
+
+        $dados->save();
     }
 }

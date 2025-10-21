@@ -11,10 +11,10 @@ class AmbienteController extends Controller
     {
         $ambiente = Ambiente::find($request->id);
 
-        if($ambiente == null){
+        if ($ambiente == null) {
             return response()->json([
                 'status' => false,
-                'message' =>'Não foi possível encontrar o ambiente'
+                'message' => 'Não foi possível encontrar o ambiente'
             ]);
         }
 
@@ -37,4 +37,19 @@ class AmbienteController extends Controller
             'message' => 'Alterado com sucesso'
         ]);
     }
+
+    public function findLED($id)
+    {
+        $led = Ambiente::find($id);
+
+        if ($led == null) {
+            return response()->json([
+                'status' => false,
+                'message' => "ID não encontrado"
+            ]);
+        }
+        //retornar o status
+        return $led->status;
+    }
+
 }
