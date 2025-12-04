@@ -7,12 +7,12 @@
         </div>
     @endif
 
-    <div class="card bg-primary">
+    <div class="card ">
         <div class="card-body">
             <div class="d-flex row input-group">
-                    <h3 class="text-light">Sensores:</h3>
+                    <h3 class="">Sensores:</h3>
                 <div class="col-md-12 text-end mb-2">
-                    <a href="{{ route('sensor.create') }}" class="btn text-bg-light">
+                    <a href="{{ route('sensor.create') }}" class="btn bg-primary text-light">
                         <strong><i class="bi bi-plus-circle"></i> Novo Sensor</strong>
                     </a>
                 </div>

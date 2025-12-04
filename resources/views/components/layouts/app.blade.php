@@ -26,9 +26,9 @@
             <div class="nav-section-title">Menu Principal</div>
 
             <nav class="nav flex-column px-2">
-                <a href="#" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
-                <a href="#" class="nav-link"><i class="bi bi-building"></i> Ambientes</a>
-                <a href="#" class="nav-link"><i class="bi bi-people"></i> Usuários</a>
+                <a href="{{route('dashboard')}}" class="nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                <a href="{{route('ambiente.index')}}" class="nav-link"><i class="bi bi-building"></i> Ambientes</a>
+                <a href="{{route('user.index')}}" class="nav-link"><i class="bi bi-people"></i> Usuários</a>
                 <a href="#" class="nav-link"><i class="bi bi-exclamation-triangle"></i> Alertas</a>
                 <a href="#" class="nav-link"><i class="bi bi-gear"></i>Configurações</a>
             </nav>

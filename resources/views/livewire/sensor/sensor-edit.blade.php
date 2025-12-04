@@ -16,21 +16,21 @@
                     <label for="exampleFormControlTextarea1" class="form-label">Descrição:</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" wire:model.defer="descricao"></textarea>
                     @error('descricao')
-                        <span class="text-light small">{{ $message }}</span>
+                        <span class="text-danger small">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControl">Tipo de sensor:</label>
                     <input type="form-control" id="" class="form-control" wire:model.defer="tipo">
                     @error('tipo')
-                        <span class="text-light small">{{ $message }}</span>
+                        <span class="text-small small">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControl">Código</label>
                     <input type="form-control" id="" class="form-control" wire:model.defer="codigo">
                     @error('codigo')
-                        <span class="text-light small">{{ $message }}</span>
+                        <span class="text-small small">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="mb-3">
@@ -41,7 +41,7 @@
                         <option value="1">Ligado</option>
                     </select>
                     @error('status')
-                        <span class="text-light small">{{ $message }}</span>
+                        <span class="text-small small">{{ $message }}</span>
                     @enderror
                 </div>
                 <button class="btn bg-success text-light">Salvar</button>

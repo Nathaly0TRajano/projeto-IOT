@@ -1,11 +1,4 @@
 <div>
-    @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-
     <div class="d-flex justify-content-center align-items-center mx-auto">
         <div class="card col-md-6 bg-primary text-light shadow">
             <form wire:submit.prevent="salvar" class="form">
@@ -15,14 +8,14 @@
                         <label for="exampleFormControl">Nome do ambiente:</label>
                         <input type="form-control" id="" class="form-control" wire:model.defer="nome">
                         @error('nome')
-                            <span class="text-light small">{{ $message }}</span>
+                            <span class="text-danger small">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Descrição:</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" wire:model.defer="descricao"></textarea>
                         @error('descricao')
-                            <span class="text-light small">{{ $message }}</span>
+                            <span class="text-danger small">{{ $message }}</span>
                         @enderror
                     </div>
                     <div class="mb-3">
@@ -33,7 +26,7 @@
                             <option value="1">Ligado</option>
                         </select>
                         @error('status')
-                            <span class="text-light small">{{ $message }}</span>
+                            <span class="text-danger small">{{ $message }}</span>
                         @enderror
                     </div>
                     <button class="btn bg-success text-light">Salvar</button>

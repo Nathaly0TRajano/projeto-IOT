@@ -1,15 +1,17 @@
-<div class="container card bg-primary mt-2">
+<div class="container card  mt-2">
     <table class="table table-striped">
         <thead class="">
-            <div class="row">
-                <div class="mt-2 mb-2">
-                    <h4 class="color-light">Tabela de registros:</h4>
+            <div class="row mt-3">
+                <div class="col">
+                    <h4 class="">Tabela de registros:</h4>
                 </div>
-                <div class="input-group col p-1 bg-body-tertiary rounded-pill">
-                    <input type="search" wire:model.debounce.300ms="search"
-                        class="form-control float-end mx-2 bg-transparent border border-0 col-md-2"
-                        placeholder="Buscar valores..." wire:model.live="search">
-                    <i class="bi bi-search text-secondary p-1" id="toggleIcon"></i>
+                <div class="col-md-3">
+                    <div class="input-group mb-3 col rounded-pill" style='background-color:#DEDEDE'>
+                        <input type="search" wire:model.debounce.300ms="search"
+                            class="form-control mx-2 bg-transparent border-0" placeholder="Buscar valores..."
+                            wire:model.live="search">
+                        <i class="bi bi-search text-secondary p-1" id="toggleIcon"></i>
+                    </div>
                 </div>
             </div>
         </thead>
@@ -29,7 +31,7 @@
                     <td>{{ $r->valor }}</td>
                     <td>{{ $r->unidade }}</td>
                     <td>{{ $r->data_hora }}</td>
-                    <td><a wire:click="delete({{ $r->id }})" class="btn bg-danger"
+                    <td><a wire:click="delete({{ $r->id }})" class="btn bg-danger text-light"
                             onclick="return confirm('Tem certeza?')"><strong>Deletar</strong></a></td>
             </tr>
             @endforeach

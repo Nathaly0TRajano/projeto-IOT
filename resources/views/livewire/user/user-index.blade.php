@@ -9,10 +9,10 @@
         <div class="card shadow px-2">
             <div class="card-body">
                 <div class="d-flex row input-group">
-                    <h3 class="">Ambientes:</h3>
+                    <h3 class="">Usuários:</h3>
                     <div class="col-md-12 text-end mb-2">
-                        <a href="{{ route('ambiente.create') }}" class="btn bg-primary text-light">
-                            <strong><i class="bi bi-plus-circle"></i> Novo Ambiente</strong>
+                        <a href="{{ route('user.create') }}" class="btn bg-primary text-light">
+                            <strong><i class="bi bi-plus-circle"></i> Novo Usuário</strong>
                         </a>
                     </div>
                 </div>
@@ -21,29 +21,25 @@
                         <tr>
                             <th>ID</th>
                             <th>Nome</th>
-                            <th>Descrição</th>
-                            <th>Status</th>
+                            <th>Email</th>
+                            {{-- <th>Ações</th> --}}
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($ambientes as $ambiente)
+                        @foreach ($user as $u)
                             <tr>
-                                <td>{{ $ambiente->id }}</td>
-                                <td>{{ $ambiente->nome }}</td>
-                                <td>{{ $ambiente->descricao }}</td>
-                                <td>
-                                    <a class="btn btn-primary"
-                                        wire:click="statusUpdate({{ $ambiente->id }})">{{ $ambiente->status }} </a>
-                                </td>
-                                <td>
+                                <td>{{ $u->id }}</td>
+                                <td>{{ $u->name }}</td>
+                                <td>{{ $u->email }}</td>
+                                {{-- <td>
                                     <a class="btn btn-warning text-light"
-                                        href="{{ route('ambiente.editar', $ambiente->id) }}"><strong>Editar</strong></a>
+                                        href="#"><strong>Editar</strong></a>
 
-                                    <button wire:click="delete({{ $ambiente->id }})" class="btn btn-danger text-light "
+                                    <button wire:click="delete({{ $u->id }})" class="btn btn-danger text-light "
                                         onclick="return confirm('Tem certeza?')">
                                         <strong>Deletar</strong>
                                     </button>
-                                </td>
+                                </td> --}}
                             </tr>
                         @endforeach
                     </tbody>

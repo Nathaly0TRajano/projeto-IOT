@@ -11,6 +11,18 @@ class AmbienteCreate extends Component
     public $descricao;
     public $status; 
 
+    protected $rule = [
+        'nome'=> 'required|max:80',
+        'descricao'=>'required|max:100',
+    ];
+
+    protected $messages = [
+        'nome.required'=> 'O campo ambiente é obrigatório',
+        'nome.max'=>'O campo só pode ter 80 caracteres',
+        'descricao.required'=>'O campo ambiente é obrigatório',
+        'descricao.max'=>'O campo só pode ter 100 caracteres',
+    ];
+
     public function render()
     {
         return view('livewire.ambiente.ambiente-create');

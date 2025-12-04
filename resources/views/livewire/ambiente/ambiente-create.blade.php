@@ -8,10 +8,16 @@
                         <label for="exampleFormControlInput1" class="form-label">Nome:</label>
                         <input type="ambiente" class="form-control" id="exampleFormControlInput1"
                             placeholder="Sala de Estar" wire:model.defer="nome">
+                             @error('nome')
+                            <span class="text-danger small">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Descrição:</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" wire:model.defer="descricao"></textarea>
+                         @error('descricao')
+                            <span class="text-danger small">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
@@ -22,7 +28,7 @@
                             <option value="1">Ligado</option>
                         </select>
                         @error('status')
-                            <span class="text-light small">{{ $message }}</span>
+                            <span class="text-danger small">{{ $message }}</span>
                         @enderror
                     </div>
 

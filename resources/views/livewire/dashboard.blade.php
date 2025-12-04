@@ -2,6 +2,7 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="mb-0">Painel de Monitormento</h4>
         <small class="text-muted">Atualizado há 2 minutos</small>
+        <small class="nav-link text-danger" wire:click='logout' >Logout<small>
     </div>
     <div class="row g-4 mb-4">
         <div class="col-md-6 col-xl-3">
